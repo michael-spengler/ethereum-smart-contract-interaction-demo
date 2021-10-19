@@ -8,3 +8,13 @@
 ## Get Ether on Ropsten
 https://faucet.ropsten.be/
 
+
+## Choose an Ethereum Connector
+### Option 1: Run your own node and connect to it
+https://ethereum.org/en/developers/docs/nodes-and-clients/run-a-node/
+
+### Option 2: Use https://infura.io/
+
+
+## Use ABI (Application Binary Interface)
+Use the ABI of your smart contract in your TypeScript code
