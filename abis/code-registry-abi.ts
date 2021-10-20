@@ -1,6 +1,65 @@
 export const codeRegistryABI = [
     {
-        "inputs": [],
+        "inputs": [
+            {
+                "internalType": "string",
+                "name": "programmingLanguage",
+                "type": "string"
+            },
+            {
+                "internalType": "string",
+                "name": "topicArea",
+                "type": "string"
+            },
+            {
+                "internalType": "string",
+                "name": "name",
+                "type": "string"
+            },
+            {
+                "internalType": "string",
+                "name": "version",
+                "type": "string"
+            },
+            {
+                "internalType": "string",
+                "name": "content",
+                "type": "string"
+            },
+            {
+                "internalType": "string",
+                "name": "ethereumWalletAddressOfContributor",
+                "type": "string"
+            }
+        ],
+        "name": "addEntry",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "string",
+                "name": "programmingLanguage",
+                "type": "string"
+            },
+            {
+                "internalType": "string",
+                "name": "topicArea",
+                "type": "string"
+            },
+            {
+                "internalType": "string",
+                "name": "name",
+                "type": "string"
+            },
+            {
+                "internalType": "string",
+                "name": "version",
+                "type": "string"
+            }
+        ],
         "name": "getContent",
         "outputs": [
             {
@@ -23,13 +82,6 @@ export const codeRegistryABI = [
             }
         ],
         "stateMutability": "view",
-        "type": "function"
-    },
-    {
-        "inputs": [],
-        "name": "setExampleEntry",
-        "outputs": [],
-        "stateMutability": "nonpayable",
         "type": "function"
     }
 ]
