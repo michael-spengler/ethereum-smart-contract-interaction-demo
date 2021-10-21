@@ -52,9 +52,20 @@ contract OpenSourceCoin is ERC20 {
 
     // Example Input: 'TypeScript', 'tutorials','hello-world.ts','v0.0.1',`console.log('hello world :)')`, '0x7A915e362353d72570dcf90aa5BAA1C5B341c7AA'
     // Example Input: 'TypeScript', 'volatility-farming','long-short-btc-exploit.ts','v0.0.1',`the magic code...`, '0x7A915e362353d72570dcf90aa5BAA1C5B341c7AA'
-    function addProposal(string memory programmingLanguage, string memory topicArea, string memory name, string memory version, string memory content, address ethereumWalletAddressOfContributor) public {
+    function addProposal(string memory programmingLanguage, string memory topicArea, string memory name, string memory version, string memory content, address ethereumWalletAddressOfContributor) public payable {
         // might be needed: https://ethereum.stackexchange.com/questions/106801/how-to-code-a-string-replace-function-in-solidity
-        proposals.push(Proposal(programmingLanguage, topicArea, name, version, content, ethereumWalletAddressOfContributor, 0));
+        // address sender = msg.sender;
+        // uint256 amountOfEther ;
+        
+        // get exchange rate ETHOSC from uniswap 
+        
+        uint256 amountOfOSC = 1;
+        
+        if (amountOfOSC < 1) {
+            // throw error
+        }
+        
+        proposals.push(Proposal(programmingLanguage, topicArea, name, version, content, ethereumWalletAddressOfContributor, amountOfOSC));
     }
     
     
@@ -71,7 +82,10 @@ contract OpenSourceCoin is ERC20 {
                 
                 proposals[i].OSCAtRiskForProposal = proposals[i].OSCAtRiskForProposal + amountToBeBettedOnTheValidityOfContribution;
                 
-                uint256 minimumOSCAtRiskForDecision = totalSupply();
+                // option 1: 
+                uint256 numberOfOpenProposals = proposals.length - entries.length;
+                
+                uint256 minimumOSCAtRiskForDecision = totalSupply() / 10 / numberOfOpenProposals;
                 
                 if (proposals[i].OSCAtRiskForProposal > minimumOSCAtRiskForDecision) {
                     entries.push(Entry(proposals[i].programmingLanguage, proposals[i].topicArea, proposals[i].name, proposals[i].version, proposals[i].content, proposals[i].ethereumWalletAddressOfContributor));
