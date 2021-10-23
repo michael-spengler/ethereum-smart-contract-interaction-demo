@@ -80,16 +80,11 @@ export const openSourceCoin = [
                 "internalType": "string",
                 "name": "content",
                 "type": "string"
-            },
-            {
-                "internalType": "address",
-                "name": "ethereumWalletAddressOfContributor",
-                "type": "address"
             }
         ],
-        "name": "addProposal",
+        "name": "addEntry",
         "outputs": [],
-        "stateMutability": "nonpayable",
+        "stateMutability": "payable",
         "type": "function"
     },
     {
@@ -197,6 +192,19 @@ export const openSourceCoin = [
         "type": "function"
     },
     {
+        "inputs": [],
+        "name": "getBalanceInContract",
+        "outputs": [
+            {
+                "internalType": "uint256",
+                "name": "",
+                "type": "uint256"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
         "inputs": [
             {
                 "internalType": "string",
@@ -225,6 +233,196 @@ export const openSourceCoin = [
                 "internalType": "string",
                 "name": "",
                 "type": "string"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "getCurrentCostForAddingAnEntry",
+        "outputs": [
+            {
+                "internalType": "uint256",
+                "name": "",
+                "type": "uint256"
+            }
+        ],
+        "stateMutability": "pure",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "getEntries",
+        "outputs": [
+            {
+                "components": [
+                    {
+                        "internalType": "string",
+                        "name": "programmingLanguage",
+                        "type": "string"
+                    },
+                    {
+                        "internalType": "string",
+                        "name": "topicArea",
+                        "type": "string"
+                    },
+                    {
+                        "internalType": "string",
+                        "name": "name",
+                        "type": "string"
+                    },
+                    {
+                        "internalType": "string",
+                        "name": "version",
+                        "type": "string"
+                    },
+                    {
+                        "internalType": "string",
+                        "name": "content",
+                        "type": "string"
+                    },
+                    {
+                        "internalType": "address payable",
+                        "name": "ethereumWalletAddressOfContributor",
+                        "type": "address"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "weiEarned",
+                        "type": "uint256"
+                    }
+                ],
+                "internalType": "struct OpenSourceCoin.Entry[]",
+                "name": "",
+                "type": "tuple[]"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "string",
+                "name": "topicArea",
+                "type": "string"
+            }
+        ],
+        "name": "getEntriesForTopicArea",
+        "outputs": [
+            {
+                "components": [
+                    {
+                        "internalType": "string",
+                        "name": "programmingLanguage",
+                        "type": "string"
+                    },
+                    {
+                        "internalType": "string",
+                        "name": "topicArea",
+                        "type": "string"
+                    },
+                    {
+                        "internalType": "string",
+                        "name": "name",
+                        "type": "string"
+                    },
+                    {
+                        "internalType": "string",
+                        "name": "version",
+                        "type": "string"
+                    },
+                    {
+                        "internalType": "string",
+                        "name": "content",
+                        "type": "string"
+                    },
+                    {
+                        "internalType": "address payable",
+                        "name": "ethereumWalletAddressOfContributor",
+                        "type": "address"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "weiEarned",
+                        "type": "uint256"
+                    }
+                ],
+                "internalType": "struct OpenSourceCoin.Entry[]",
+                "name": "",
+                "type": "tuple[]"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "string",
+                "name": "programmingLanguage",
+                "type": "string"
+            },
+            {
+                "internalType": "string",
+                "name": "topicArea",
+                "type": "string"
+            },
+            {
+                "internalType": "string",
+                "name": "name",
+                "type": "string"
+            },
+            {
+                "internalType": "string",
+                "name": "version",
+                "type": "string"
+            }
+        ],
+        "name": "getEntry",
+        "outputs": [
+            {
+                "components": [
+                    {
+                        "internalType": "string",
+                        "name": "programmingLanguage",
+                        "type": "string"
+                    },
+                    {
+                        "internalType": "string",
+                        "name": "topicArea",
+                        "type": "string"
+                    },
+                    {
+                        "internalType": "string",
+                        "name": "name",
+                        "type": "string"
+                    },
+                    {
+                        "internalType": "string",
+                        "name": "version",
+                        "type": "string"
+                    },
+                    {
+                        "internalType": "string",
+                        "name": "content",
+                        "type": "string"
+                    },
+                    {
+                        "internalType": "address payable",
+                        "name": "ethereumWalletAddressOfContributor",
+                        "type": "address"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "weiEarned",
+                        "type": "uint256"
+                    }
+                ],
+                "internalType": "struct OpenSourceCoin.Entry",
+                "name": "",
+                "type": "tuple"
             }
         ],
         "stateMutability": "view",
@@ -278,6 +476,34 @@ export const openSourceCoin = [
             }
         ],
         "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "string",
+                "name": "programmingLanguage",
+                "type": "string"
+            },
+            {
+                "internalType": "string",
+                "name": "topicArea",
+                "type": "string"
+            },
+            {
+                "internalType": "string",
+                "name": "name",
+                "type": "string"
+            },
+            {
+                "internalType": "string",
+                "name": "version",
+                "type": "string"
+            }
+        ],
+        "name": "rewardContributor",
+        "outputs": [],
+        "stateMutability": "payable",
         "type": "function"
     },
     {
@@ -356,39 +582,6 @@ export const openSourceCoin = [
                 "type": "bool"
             }
         ],
-        "stateMutability": "nonpayable",
-        "type": "function"
-    },
-    {
-        "inputs": [
-            {
-                "internalType": "string",
-                "name": "programmingLanguage",
-                "type": "string"
-            },
-            {
-                "internalType": "string",
-                "name": "topicArea",
-                "type": "string"
-            },
-            {
-                "internalType": "string",
-                "name": "name",
-                "type": "string"
-            },
-            {
-                "internalType": "string",
-                "name": "version",
-                "type": "string"
-            },
-            {
-                "internalType": "uint256",
-                "name": "amountToBeBettedOnTheValidityOfContribution",
-                "type": "uint256"
-            }
-        ],
-        "name": "voteOnProposal",
-        "outputs": [],
         "stateMutability": "nonpayable",
         "type": "function"
     }
